@@ -6,8 +6,13 @@ import pages.*;
 
 public class MyStoreTest extends BaseTest {
 
+    private final String EMAIL = "hahacep442@1heizi.com";
+    private final String PASSWORD = "123456";
+    private final String CITY = "Novi Sad";
+
     @Test
     public void myStoreTest() throws InterruptedException {
+
         ChooseProduct chooseProduct = new ChooseProduct(driver);
         chooseProduct.myStoreChooseProduct();
 
@@ -19,11 +24,11 @@ public class MyStoreTest extends BaseTest {
         priceConfirmation.proceedOnNextPage();
 
         BuyerAuthentication buyerLogin = new BuyerAuthentication(driver);
-        buyerLogin.login();
+        buyerLogin.login(EMAIL, PASSWORD);
 
         AddressCheck addressCheck = new AddressCheck(driver);
         String city = addressCheck.deliveryAddressCheck();
-        Assert.assertTrue(city.contains("Novi Sad"));
+        Assert.assertTrue(city.contains(CITY));
         addressCheck.proceedOnNextPage();
 
         ShippingAndPayment finalSteps = new ShippingAndPayment(driver);

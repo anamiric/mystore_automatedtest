@@ -12,6 +12,8 @@ import java.util.List;
 
 public class ChooseProduct extends BaseHelper {
 
+    private final String URL = "http://automationpractice.com/index.php";
+
     @FindBy(className = "blockbestsellers")
     WebElement category;
 
@@ -23,7 +25,7 @@ public class ChooseProduct extends BaseHelper {
     }
 
     private void goToURL() {
-        driver.get("http://automationpractice.com/index.php");
+        driver.get(URL);
     }
 
     private void chooseCategory(WebElement element) {

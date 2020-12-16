@@ -32,11 +32,11 @@ public class TotalPriceCheckout extends BaseHelper {
         String currentTotalPriceText = currentTotalPrice.getText();
         quantityCheck("4", shoppingCartSummary);
         double productPrice = getProductPrice(shoppingCartSummary);
-        System.out.println("Cena proizvoda:" + productPrice);
+        System.out.println("Product price:" + productPrice);
         double shippingPrice = getShippingPrice(shoppingCartSummary);
-        System.out.println("Cena dostave:" + shippingPrice);
+        System.out.println("Shipping price:" + shippingPrice);
         double totalOrderPrice = getTotalPrice(currentTotalPriceText);
-        System.out.println("Ukupna cena:" + totalOrderPrice);
+        System.out.println("Total price:" + totalOrderPrice);
         return totalOrderPrice == ((productPrice * 4) + shippingPrice);
     }
 

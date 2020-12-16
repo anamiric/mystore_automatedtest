@@ -29,18 +29,13 @@ public class BuyerAuthentication extends BaseHelper {
         PageFactory.initElements(driver, this);
     }
 
-    private void buyerLogin(WebElement element, String email, String password) {
-        wdWait.until(ExpectedConditions.visibilityOf(element));
-        js.executeScript("arguments[0].scrollIntoView();", element);
+    public void login(String email, String password) {
+        wdWait.until(ExpectedConditions.visibilityOf(loginForm));
+        js.executeScript("arguments[0].scrollIntoView();", loginForm);
         emailBox.sendKeys(email);
         passwordBox.sendKeys(password);
         click(loginButton);
+
     }
-
-    public void login() {
-
-        buyerLogin(loginForm, "hahacep442@1heizi.com", "123456");
-    }
-
 
 }
